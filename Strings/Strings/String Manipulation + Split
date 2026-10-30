@@ -1,0 +1,31 @@
+/*
+ * Problem: LeetCode 2114 - Maximum Number of Words Found in Sentences
+ *
+ * Approach:
+ * 1. Traverse each sentence in the array.
+ * 2. Use trim() to remove leading and trailing spaces.
+ * 3. Split the sentence using spaces to count its words.
+ * 4. Update the maximum word count using Math.max().
+ * 5. Return the maximum count.
+ *
+ * Time Complexity: O(n * L)
+ * Space Complexity: O(L)
+ */
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int count = 0;
+
+        // Traverse each sentence
+        for (int i = 0; i < sentences.length; i++) {
+
+            // Remove extra spaces and split the sentence into words
+            String[] res = sentences[i].trim().split(" ");
+
+            // Update the maximum number of words
+            count = Math.max(count, res.length);
+        }
+
+        return count;
+    }
+}
